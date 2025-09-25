@@ -1,32 +1,29 @@
-Miniport by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+## Gabriela Prado Portfolio Website
 
+An interactive, modern portfolio web app to showcase the work and skills of Gabriela Prado—Software Developer & Game Designer.
 
-A super simple responsive portfolio template. It's only a single page because hey, sometimes
-you don't need a half dozen pages to make your point.
+### 🚀 Features
+- **Single-page responsive design** for seamless experience on all devices
+- **Dynamic project showcase** powered by MySQL database
+- **Contact form** with spam protection, reCAPTCHA, and email notifications
+- **Fast & secure**: Express.js backend with rate limiting and security best practices
+- **Custom EJS templates** for flexible, maintainable UI
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+### 🛠️ Tech Stack
+- **Frontend:** HTML5, CSS3, EJS, Font Awesome
+- **Backend:** Node.js, Express.js
+- **Database:** MySQL (with connection pooling)
+- **Email:** Nodemailer
+- **Security:** express-rate-limit, validator, Google reCAPTCHA
+- **Other:** jQuery, dotenv, CORS
 
-(* = Not included)
+### 📂 Structure
+- `index.js` — Main Express server
+- `controller/` — Route controllers (static pages, contact)
+- `views/` — EJS templates
+- `assets/` — CSS, JS, images
+- `database/` — MySQL scripts/data
 
-Feedback, bug reports, and comments are not only welcome, but strongly encouraged :)
-
-AJ
-aj@lkn.io | @ajlkn
-
-PS: Not sure how to get that contact form working? Give formspree.io a try (it's awesome).
-
-
-Credits:
-
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other:
-		jQuery (jquery.com)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+---
+**Author:** Gabriela Prado  
+**License:** ISC
