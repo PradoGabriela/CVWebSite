@@ -1,6 +1,6 @@
 ## Gabriela Prado Portfolio Website
 
-An interactive, modern portfolio web app to showcase the work and skills of Gabriela Prado—Software Developer & Game Designer.
+An interactive, modern portfolio web app to showcase my lastest projects as Software Developer & Game Designer.
 
 ### 🚀 Features
 - **Single-page responsive design** for seamless experience on all devices
