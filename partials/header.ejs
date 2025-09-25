@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>
+        
+        <% if(title){ %>
+            <%= title %>
+        <% } else { %>
+            Gabriela Prado
+        <% } %>
+        
+    </title>
+    <link rel="stylesheet" href="/css/main.css" type="text/css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    
+    <!-- reCAPTCHA v3 Script -->
+    <script>
+        // Load reCAPTCHA dynamically based on configuration
+        fetch('/recaptcha-config')
+            .then(response => response.json())
+            .then(config => {
+                if (config.enabled && config.siteKey) {
+                    const script = document.createElement('script');
+                    script.src = `https://www.google.com/recaptcha/api.js?render=${config.siteKey}`;
+                    script.async = true;
+                    script.defer = true;
+                    document.head.appendChild(script);
+                    
+                    // Store site key for later use
+                    window.recaptchaSiteKey = config.siteKey;
+                    window.recaptchaEnabled = true;
+                } else {
+                    window.recaptchaEnabled = false;
+                    console.log('reCAPTCHA not configured');
+                }
+            })
+            .catch(error => {
+                console.log('Failed to load reCAPTCHA config:', error);
+                window.recaptchaEnabled = false;
+            });
+    </script>
+
+    
+    </head>
+    <body class="is-preload">
+
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="container">
+					<li><a href="#top">Top</a></li>
+					<li><a href="#work">Work</a></li>
+					<li><a href="#portfolio">Portfolio</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+

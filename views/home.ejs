@@ -1,0 +1,253 @@
+<%- include('../partials/header') -%>
+<!-- Home -->
+			<article id="top" class="wrapper style1">
+				<div class="container">
+					<div class="row">
+						<div class="col-4 col-5-large col-12-medium">
+							<span class="image fit"><img src="/picProfile.jpg" alt="picture" /></span>
+						</div>
+						<div class="col-8 col-7-large col-12-medium">
+							<header>
+								<h1>Hi. I'm <strong>Gabriela Prado</strong>.</h1>
+							</header>
+							<p><strong>Software Developer</strong> and <strong>Game Designer</strong> who loves turning cool ideas into real, usable stuff, whether it’s an app that solves a problem, a game that makes you smile, or a full-stack web app that just works. I work with tools like Unity, Flutter, Dart, Java, and JavaScript to build cross-platform experiences that look great and feel even better to use.</p>
+							<div class="tech-icons">
+							<i class="devicon-unity-plain-wordmark colored" title="Unity"></i>
+							<i class="devicon-java-plain-wordmark colored" title="Java"></i>
+							<i class="devicon-dart-plain-wordmark colored" title="Dart"></i>
+							<i class="devicon-mysql-plain-wordmark colored" title="MySQL" ></i>
+							<i class="devicon-firebase-plain-wordmark colored" title="Firebase"></i>
+							<i class="devicon-nodejs-plain-wordmark colored"title="Node js"> </i>
+							<i class="devicon-flutter-plain colored" title="Flutter"></i>
+							<i class="devicon-csharp-plain colored" title="C#"></i>
+							<i class="devicon-javascript-plain colored" title="Javascript"></i>
+							</div>
+
+							<a href="#work" class="button large scrolly">Learn about what I do</a>
+						</div>
+					</div>
+				</div>
+			</article>
+
+		<!-- Work -->
+			<article id="work" class="wrapper style2">
+				<div class="container">
+					<header>
+						<h2>Here's all the stuff I do.</h2>
+						<p>I’m all about making apps, games, and websites that people actually enjoy using.</p>
+
+					</header>
+					<div class="row aln-center">
+						<div class="col-4 col-6-medium col-12-small">
+							<section class="box style1">
+								<span class="icon solid featured fas fa-mobile-alt"></span> 
+								<h3>Mobile Apps</h3>
+								<p>I build sleek, user-friendly scalable apps with Flutter that look great and run smoothly on both Android and iOS. From concept to launch, I’ve got you covered.</p>
+							</section>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<section class="box style1">
+								<span class="icon solid featured fas fa-gamepad"></span>  
+								<h3>Game Development</h3>
+								<p>I design and code games in Unity  that focus on simulation, management, and kid-friendly experiences.  I love making interactive worlds that are both playful and meaningful.</p>
+							</section>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<section class="box style1">
+								<span class="icon solid featured fas fa-laptop-code"></span>
+								<h3>Full Stack Development</h3>
+								<p>Need a full solution? I build both front-end and back-end systems using Node.js, JavaScript, Java, MySQL, and whatever else it takes to deliver great results.</p>
+							</section>
+						</div>
+					</div>
+					<footer>
+						 <p>Curious to see what I’ve been working on? Take a look below!</p>
+						<a href="#portfolio" class="button large scrolly">See some of my recent work</a>
+					</footer>
+				</div>
+			</article>
+
+		<!-- Portfolio -->
+			<article id="portfolio" class="wrapper style3">
+				<div class="container">
+					<header>
+						<h2>Check out some of my latest work.</h2>
+						<p>Here are a few projects I’ve worked on recently—apps, games, and web stuff I’m proud of.</p>
+
+					</header>
+					<div class="row">
+						<% if (projects && projects.length > 0) { %>
+						<% projects.forEach(project => { %>
+					<div class="col-4 col-6-medium col-12-small">
+						<article class="box style2" >
+								<span class="icon solid featured fas fa-<%= project.type %>" style="font-size: 0.4em; margin-top: -2em; margin-bottom: 8em;"></span> 
+								
+							<img  class="image featured" src="<%= project.image_url %>" alt="<%= project.img_description %>" />
+						<h3><a href="<%= project.link %>"  target="_blank"><%= project.title %></a></h3>
+						<div style="display: flex; justify-content: space-between; align-items: flex-start;" class="tech-row">
+				
+						<div class="tech-icons2" style="text-align: left;">
+						<h6 style="color: gray; margin-bottom: -0.2em;">Platforms:</h6>
+						<% project.platforms.forEach(platform => { %>
+						<i class="devicon-<%= platform.toLowerCase() %>-plain colored" title="<%= platform %>"></i>
+						<% }) %>
+						</div>
+
+						<div class="tech-icons2" style="text-align: right;">
+						<h6 style="color: gray; margin-bottom: -0.2em;">Technologies:</h6>
+						<% project.technologies.forEach(tech => { %>
+						<i class="devicon-<%= tech.toLowerCase() %>-plain colored" title="<%= tech %>"></i>
+						<% }) %>
+				</div>
+
+				</div>
+
+							<div class="description-container">
+								<p class="description-text expandable" style="text-align:start;"><%= project.description %> <a href="<%= project.link %>" target="_blank">Link</a></p>
+
+								<button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>
+							</div>
+						</article>
+					</div>
+				<% }) %>
+			<% } else { %>
+				<p>No projects available.</p>
+			<% } %>
+		</div>
+					<footer>
+						<p>Questions? Ideas? Let’s connect and make something great.</p>
+						<a href="#contact" class="button large scrolly">Get in touch with me</a>
+					</footer>
+				</div>
+			</article>
+
+		<!-- Contact -->
+			<article id="contact" class="wrapper style4">
+				<div class="container medium">
+					<header>
+						<h2>Contact me.</h2>
+						<p>Interested in working together or have questions? Feel free to reach out anytime.</p>
+
+					</header>
+					<div class="row">
+						<div class="col-12">
+							<form method="post" action="/contact" id="contactForm">
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<input type="text" name="name" id="name" placeholder="Name" required />
+									</div>
+									<div class="col-6 col-12-small">
+										<input type="email" name="email" id="email" placeholder="Email" required />
+									</div>
+									<!-- Honeypot field - hidden from users but visible to bots -->
+									<input type="text" name="website" id="website" style="display:none !important; visibility:hidden !important; position:absolute !important; left:-9999px !important;" tabindex="-1" autocomplete="off" />
+									<div class="col-12">
+										<input type="text" name="subject" id="subject" placeholder="Subject" required />
+									</div>
+									<div class="col-12">
+										<textarea name="message" id="message" placeholder="Message" required></textarea>
+									</div>
+									<!-- Hidden timestamp for time-based validation -->
+									<input type="hidden" name="formTime" id="formTime" />
+									<!-- Hidden reCAPTCHA token -->
+									<input type="hidden" name="g-recaptcha-response" id="recaptcha-token" />
+									<div class="col-12">
+										<ul class="actions">
+											<li><input type="submit" value="Send Message" /></li>
+											<li><input type="reset" value="Clear Form" class="alt" /></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="col-12">
+							<hr />
+							<h3>Find me on ...</h3>
+							<ul class="social">
+								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+								<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
+								<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
+								<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+								<!--
+								<li><a href="#" class="icon solid fa-rss"><span>RSS</span></a></li>
+								<li><a href="#" class="icon brands fa-instagram"><span>Instagram</span></a></li>
+								<li><a href="#" class="icon brands fa-foursquare"><span>Foursquare</span></a></li>
+								<li><a href="#" class="icon brands fa-skype"><span>Skype</span></a></li>
+								<li><a href="#" class="icon brands fa-soundcloud"><span>Soundcloud</span></a></li>
+								<li><a href="#" class="icon brands fa-youtube"><span>YouTube</span></a></li>
+								<li><a href="#" class="icon brands fa-blogger"><span>Blogger</span></a></li>
+								<li><a href="#" class="icon brands fa-flickr"><span>Flickr</span></a></li>
+								<li><a href="#" class="icon brands fa-vimeo"><span>Vimeo</span></a></li>
+								-->
+							</ul>
+							<hr />
+						</div>
+					</div>
+					<script>
+						// Set form load timestamp for time-based validation
+						document.addEventListener('DOMContentLoaded', function() {
+							document.getElementById('formTime').value = Date.now();
+							
+							// Handle form submission with AJAX
+							const form = document.getElementById('contactForm');
+							const submitBtn = form.querySelector('input[type="submit"]');
+							
+							form.addEventListener('submit', async function(e) {
+								e.preventDefault();
+								
+								// Disable submit button to prevent double submission
+								const originalText = submitBtn.value;
+								submitBtn.value = 'Sending...';
+								submitBtn.disabled = true;
+								
+								try {
+									// Generate reCAPTCHA token if enabled
+									if (window.recaptchaEnabled && window.grecaptcha) {
+										console.log('🤖 Generating reCAPTCHA token...');
+										const token = await window.grecaptcha.execute(window.recaptchaSiteKey, {
+											action: 'contact_form'
+										});
+										document.getElementById('recaptcha-token').value = token;
+										console.log('✅ reCAPTCHA token generated');
+									} else {
+										console.log('⚠️ reCAPTCHA not available');
+									}
+									
+									const formData = new FormData(form);
+									const response = await fetch('/contact', {
+										method: 'POST',
+										body: formData
+									});
+									
+									const result = await response.json();
+									
+									if (result.success) {
+										// Show success message
+										alert(result.message);
+										form.reset();
+										document.getElementById('formTime').value = Date.now();
+									} else {
+										alert(result.message || 'Please check your input and try again.');
+									}
+								} catch (error) {
+									alert('Sorry, there was a problem sending your message. Please try again later.');
+								} finally {
+									// Re-enable submit button
+									submitBtn.value = originalText;
+									submitBtn.disabled = false;
+								}
+							});
+						});
+						
+						// Reset timestamp when form is reset
+						document.querySelector('input[type="reset"]').addEventListener('click', function() {
+							setTimeout(function() {
+								document.getElementById('formTime').value = Date.now();
+							}, 100);
+						});
+					</script>
+
+<%- include('../partials/footer') -%>
