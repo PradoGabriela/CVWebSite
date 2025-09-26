@@ -6,6 +6,17 @@ router.use(bodyParser.urlencoded({extended:true}));
 var db = require('../db');
 //const Game = require('../components/games');
 
+// Health check endpoint
+router.get('/health', function(req, res) {
+  res.status(200).json({
+    status: 'OK',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    memory: process.memoryUsage(),
+    version: process.version
+  });
+});
+
 router.get('/', function(req, res) {
   var title = 'Gabriela Prado - Portfolio';
   const query = "SELECT * FROM projects";

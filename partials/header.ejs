@@ -4,44 +4,82 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Gabriela Prado - Software Developer & Game Designer. Portfolio showcasing innovative apps projects, skills in JavaScript, Java, Unity, Node.js, and more."/>
+    <meta name="keywords" content="Gabriela Prado, Software Developer, Game Designer, Web Developer, JavaScript, Java, Unity, Node.js, Portfolio, Ireland"/>
+    <meta name="author" content="Gabriela Prado"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="language" content="English"/>
+    <meta name="revisit-after" content="7 days"/>
+    
+    <!-- Open Graph Meta Tags (for social media sharing) -->
+    <meta property="og:title" content="<% if(title){ %><%= title %><% } else { %>Gabriela Prado - Software Developer<% } %>"/>
+    <meta property="og:description" content="Software Developer & Game Designer portfolio showcasing innovative apps projects."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://pradogabriela.dev"/>
+    <meta property="og:image" content="https://pradogabriela.dev/images/picProfile.jpg"/>
+    <meta property="og:site_name" content="Gabriela Prado Portfolio"/>
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="<% if(title){ %><%= title %><% } else { %>Gabriela Prado - Software Developer<% } %>"/>
+    <meta name="twitter:description" content="Software Developer & Game Designer portfolio showcasing innovative apps projects."/>
+    <meta name="twitter:image" content="https://pradogabriela.dev/images/picProfile.jpg"/>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://pradogabriela.dev"/>
+    
     <title>
         
         <% if(title){ %>
             <%= title %>
         <% } else { %>
-            Gabriela Prado
+            Gabriela Prado - Software Developer
         <% } %>
         
     </title>
     <link rel="stylesheet" href="/css/main.css" type="text/css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    
-    <!-- reCAPTCHA v3 Script -->
-    <script>
-        // Load reCAPTCHA dynamically based on configuration
-        fetch('/recaptcha-config')
-            .then(response => response.json())
-            .then(config => {
-                if (config.enabled && config.siteKey) {
-                    const script = document.createElement('script');
-                    script.src = `https://www.google.com/recaptcha/api.js?render=${config.siteKey}`;
-                    script.async = true;
-                    script.defer = true;
-                    document.head.appendChild(script);
-                    
-                    // Store site key for later use
-                    window.recaptchaSiteKey = config.siteKey;
-                    window.recaptchaEnabled = true;
-                } else {
-                    window.recaptchaEnabled = false;
-                    console.log('reCAPTCHA not configured');
-                }
-            })
-            .catch(error => {
-                console.log('Failed to load reCAPTCHA config:', error);
-                window.recaptchaEnabled = false;
-            });
+
+    <!-- Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Gabriela Prado",
+        "jobTitle": "Software Developer and Game Designer",
+        "description": "Software Developer & Game Designer portfolio showcasing innovative apps projects.",
+        "url": "https://pradogabriela.dev",
+        "image": "https://pradogabriela.dev/images/picProfile.jpg",
+        "sameAs": [
+            
+            "https://github.com/PradoGabriela"
+        ],
+        "knowsAbout": [
+            "JavaScript",
+            "Node.js",
+            "Full Stack Development",
+            "Web Development",
+            "Software Engineering",
+            "Java",
+            "Flutter",
+            "Game Development",
+            "Unity"
+        ],
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Freelance"
+        }
+    }
     </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
 
     
     </head>
@@ -56,4 +94,3 @@
 					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
-
