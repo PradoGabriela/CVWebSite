@@ -171,9 +171,9 @@ This project is licensed under the ISC License - see the [LICENSE.txt](LICENSE.t
 ## 👤 Author
 
 **Gabriela Prado**
-- Portfolio: [Your Website URL]
+- Portfolio: www.pradogabriela.dev
 - GitHub: [@PradoGabriela](https://github.com/PradoGabriela)
-- LinkedIn: [Your LinkedIn Profile]
+
 
 ## 🙏 Acknowledgments
 
