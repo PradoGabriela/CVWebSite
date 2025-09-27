@@ -110,23 +110,8 @@ router.post('/contact', async (req, res) => {
     });
   }
 
-  if (isSpam || blockedDomains.includes(emailDomain)) {
-  const reason = isSpam ? 'Keyword spam' : `Blocked domain: ${emailDomain}`;
-  console.error(`🚫 SPAM BLOCKED: ${reason} | From: ${email}`);
   
-  try {
-    throw new Error(`Spam detected: ${reason}`);
-  } catch (err) {
-    // Backend sees it as a failure, logs error
-    console.error(err);
-    
-    // Client still gets fake success
-    return res.json({ 
-      success: true, 
-      message: 'Thank you! Your message has been sent successfully.' 
-    });
-  }
-}
+  // Send email
 
 
 
