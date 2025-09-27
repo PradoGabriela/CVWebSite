@@ -151,18 +151,8 @@ The `projects` table should include:
 3. Set up SMTP for email functionality
 4. Configure reverse proxy (nginx recommended)
 
-### Hosting Recommendations
-- **Backend:** Heroku, DigitalOcean, AWS, or VPS
-- **Database:** MySQL hosting service or cloud database
-- **Static Assets:** CDN for optimal performance
 
-## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## 📄 License
 
@@ -171,9 +161,9 @@ This project is licensed under the ISC License - see the [LICENSE.txt](LICENSE.t
 ## 👤 Author
 
 **Gabriela Prado**
-- Portfolio: [Your Website URL]
+- Portfolio: www.pradogabriela.dev
 - GitHub: [@PradoGabriela](https://github.com/PradoGabriela)
-- LinkedIn: [Your LinkedIn Profile]
+  
 
 ## 🙏 Acknowledgments
 
