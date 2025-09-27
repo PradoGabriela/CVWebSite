@@ -46,6 +46,25 @@ router.post('/contact', async (req, res) => {
   const subject = (req.body.subject || '').toString().trim();
   const message = (req.body.message || '').toString().trim();
 
+// Check honeypot field - if filled, it's spam
+const honeypot = (req.body.website || '').toString().trim();
+const honeypot2 = (req.body.url || '').toString().trim();
+const honeypot3 = (req.body.confirm_email || '').toString().trim();
+const honeypot4 = (req.body.phone || '').toString().trim();
+console.log('🍯 Honeypot field value:', honeypot ? `"${honeypot}"` : 'empty');
+console.log('🍯 Honeypot2 field value:', honeypot2 ? `"${honeypot2}"` : 'empty');
+console.log('🍯 Honeypot3 field value:', honeypot3 ? `"${honeypot3}"` : 'empty');
+console.log('🍯 Honeypot4 field value:', honeypot4 ? `"${honeypot4}"` : 'empty');
+
+if (honeypot || honeypot2 || honeypot3 || honeypot4) {
+    //console.log('🚫 HONEYPOT TRIGGERED - Spam detected from:', email);
+    // Return fake success to avoid giving feedback to spammers
+    return res.json({ 
+        success: true, 
+        message: 'Thank you! Your message has been sent successfully.' 
+    });
+}
+
   // Basic validation
   if (!name || !email || !subject || !message) {
     return res.status(400).json({ 

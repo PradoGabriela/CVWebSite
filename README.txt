@@ -1,35 +1,41 @@
 # Gabriela Prado Portfolio Website
 
-A modern, responsive portfolio web application showcasing my projects as a Software Developer & Game Designer. Built with Node.js, Express, and MySQL with a focus on performance, security, and user experience.
+🌟 **Live Website**: www.pradogabriela.dev
+
+A modern, responsive portfolio web application showcasing my projects as a Software Developer & Game Designer. Built with Node.js, Express, and MySQL with enterprise-level security and performance optimizations.
 
 ## 🚀 Features
 
-- **Responsive Single-Page Design** - Optimized for all devices with smooth scrolling navigation
-- **Dynamic Project Portfolio** - Database-driven project showcase with detailed information
-- **Advanced Contact Form** - AJAX-powered submission with comprehensive spam protection
-- **Robust Security** - Multi-layer spam detection, rate limiting, and input validation
-- **Performance Optimized** - Minimal dependencies, efficient database connection pooling
-- **Professional UI/UX** - Clean design with interactive elements and modern styling
+- **📱 Responsive Single-Page Design** - Optimized for all devices with smooth scrolling
+- **🎯 Dynamic Project Portfolio** - Database-driven showcase with expandable descriptions
+- **📧 Advanced Contact Form** - AJAX-powered with multi-layer spam protection
+- **🛡️ Enterprise Security** - Honeypot fields, rate limiting, domain blocking
+- **⚡ High Performance** - Connection pooling, optimized assets, health monitoring
+- **🎨 Modern UI/UX** - Clean design with tech stack icons and animations
+- **🔍 SEO Optimized** - Structured data, meta tags, sitemap
+- **📊 Production Ready** - SSL support, proxy trust, error handling
 
 ## 🛠️ Tech Stack
 
 ### Backend
-- **Node.js** with **Express.js** - Fast, minimalist web framework
-- **MySQL2** - Database with connection pooling for optimal performance
-- **Nodemailer** - Professional email handling with HTML templates
-- **EJS** - Templating engine for dynamic content rendering
+- **Node.js** with **Express.js 5.1.0** - Fast, secure web framework
+- **MySQL2 3.14.3** - Database with SSL and connection pooling
+- **Nodemailer 7.0.6** - Professional email with HTML templates
+- **EJS 3.1.10** - Server-side templating engine
 
 ### Frontend
-- **HTML5 & CSS3** - Modern, semantic markup with responsive design
-- **JavaScript (ES6+)** - Interactive features and AJAX form submission
+- **HTML5 & CSS3** - Semantic markup with responsive grid
+- **JavaScript (ES6+)** - Interactive features and AJAX
 - **Font Awesome** - Professional icon library
-- **jQuery** - DOM manipulation and animations
+- **DevIcon CDN** - Technology stack icons
+- **SASS** - Advanced CSS preprocessing
 
 ### Security & Performance
-- **express-rate-limit** - Request rate limiting to prevent abuse
-- **dotenv** - Secure environment variable management
-- **Comprehensive Spam Protection** - Keyword filtering and domain blocking
-- **Input Validation** - Server-side validation for all user inputs
+- **Helmet 8.1.0** - Security headers and CSP
+- **express-rate-limit 8.1.0** - Advanced rate limiting
+- **CORS 2.8.5** - Cross-origin protection
+- **4-Layer Spam Protection** - Honeypots, keywords, domains, rate limits
+- **Comprehensive Validation** - All inputs sanitized and validated
 
 ## � Project Structure
 

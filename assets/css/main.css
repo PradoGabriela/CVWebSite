@@ -213,6 +213,17 @@ footer > p {
   font-size: 1.25em;
 }
 
+/* Honeypot field protection */
+.hp-field {
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    nav-index: -1 !important;
+}
+
 /* Container */
 .container {
   margin: 0 auto;
@@ -1198,6 +1209,7 @@ form textarea {
   -ms-transition: background .2s ease-in-out, box-shadow .2s ease-in-out;
   transition: background .2s ease-in-out, box-shadow .2s ease-in-out;
   -webkit-appearance: none;
+  appearance: none;
   display: block;
   border: 0;
   padding: 0.75em;
@@ -1209,6 +1221,19 @@ form textarea {
   box-shadow: inset 0px 2px 3px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025);
   width: 100%;
 }
+
+/* Override browser autofill styles */
+form input[type=email]:-webkit-autofill,
+form input[type=email]:-webkit-autofill:hover,
+form input[type=email]:-webkit-autofill:focus,
+form input[type=text]:-webkit-autofill,
+form input[type=text]:-webkit-autofill:hover,
+form input[type=text]:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+  -webkit-text-fill-color: #bbb !important;
+  background: #fff !important;
+  border: solid 1px #ddd !important;
+}
 form input[type=text]:focus,
 form input[type=email]:focus,
 form input[type=password]:focus,
@@ -1216,6 +1241,14 @@ form select:focus,
 form textarea:focus {
   background: #fafafa;
   box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px #43bff0;
+}
+
+/* Override browser autofill focus styles */
+form input[type=email]:-webkit-autofill:focus,
+form input[type=text]:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #fafafa inset, inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px #43bff0 !important;
+  -webkit-text-fill-color: #bbb !important;
+  background: #fafafa !important;
 }
 form textarea {
   height: 15em;
@@ -1625,6 +1658,7 @@ ul.actions li:first-child {
   color: #fff;
 }
 .wrapper.style4 form input[type=text],
+.wrapper.style4 form input[type=email],
 .wrapper.style4 form input[type=password],
 .wrapper.style4 form select,
 .wrapper.style4 form textarea {
@@ -1632,10 +1666,30 @@ ul.actions li:first-child {
   background: #282828;
 }
 .wrapper.style4 form input[type=text]:focus,
+.wrapper.style4 form input[type=email]:focus,
 .wrapper.style4 form input[type=password]:focus,
 .wrapper.style4 form select:focus,
 .wrapper.style4 form textarea:focus {
   background: #252525;
+}
+
+/* Override autofill styles for dark theme */
+.wrapper.style4 form input[type=email]:-webkit-autofill,
+.wrapper.style4 form input[type=email]:-webkit-autofill:hover,
+.wrapper.style4 form input[type=email]:-webkit-autofill:focus,
+.wrapper.style4 form input[type=text]:-webkit-autofill,
+.wrapper.style4 form input[type=text]:-webkit-autofill:hover,
+.wrapper.style4 form input[type=text]:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #282828 inset !important;
+  -webkit-text-fill-color: #999 !important;
+  background: #282828 !important;
+  border: none !important;
+}
+
+.wrapper.style4 form input[type=email]:-webkit-autofill:focus,
+.wrapper.style4 form input[type=text]:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #252525 inset !important;
+  background: #252525 !important;
 }
 
 /* Nav */
